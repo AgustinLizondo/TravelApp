@@ -1,4 +1,4 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import colors from '../assets/colors';
@@ -6,11 +6,15 @@ import colors from '../assets/colors';
 const Header = ({ profileImage }) => {
   return (
     <View style={styles.headerCard}>
-      <Icon name={'menu'} size={32} color={colors.Black} />
-      <Image
-        source={profileImage}
-        style={styles.profileImage}
-      />
+      <TouchableOpacity>
+        <Icon name={'menu'} size={32} color={colors.Black} />
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Image
+          source={profileImage}
+          style={styles.profileImage}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -24,6 +28,7 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   profileImage: {
     height: 52,

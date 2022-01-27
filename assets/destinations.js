@@ -10,3 +10,5 @@ const destinations = [
         location: 'USA',
     },
 ]
+
+export default destinations

@@ -14,9 +14,18 @@ const Discover = () => {
                 <TextTab content={'Cities'} selected={false} />
                 <TextTab content={'Experiences'} selected={false} />
             </View>
-            <ScrollView horizontal >
+            <ScrollView 
+                horizontal
+                showsHorizontalScrollIndicator={false} 
+            >
                 {destinations.map((el, index) => (<DiscoverCard bgImage={el.bgImage} title={el.title} location={el.location} key={index} />))}
             </ScrollView>
+            {/* We can replace that ScrollView with this FlatList. */}
+            {/* <FlatList
+                data={destinations}
+                renderItem={DiscoverCard}
+                horizontal
+            /> */}
         </View>
     );
 };
