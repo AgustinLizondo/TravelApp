@@ -5,11 +5,11 @@ import Discover from '../components/Discover';
 import Activities from '../components/Activities';
 import LearnMore from '../components/LearnMore';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
     return (
         <>
             <Header profileImage={require('../assets/person.jpg')} />
-            <Discover />
+            <Discover navigation={navigation} />
             <Activities />
             <LearnMore />
         </>

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
+import colors from '../assets/colors';
 
 const MoreCard = ({ bgImage, title }) => {
     return (
@@ -22,7 +23,8 @@ const styles = StyleSheet.create({
         lineHeight: 28,
         fontWeight: 'bold',
         bottom: 20,
-        paddingLeft: 40
+        paddingLeft: 40,
+        color: colors.White
     },
     bgImage: {
         width: 170,

@@ -4,7 +4,7 @@ import TextTab from './TextTab';
 import DiscoverCard from './DiscoverCard';
 import destinations from '../assets/destinations'
 
-const Discover = () => {
+const Discover = ({ navigation }) => {
     return (
         <View style={styles.card}>
             <Text style={styles.discoverText}>Discover</Text>
@@ -14,11 +14,22 @@ const Discover = () => {
                 <TextTab content={'Cities'} selected={false} />
                 <TextTab content={'Experiences'} selected={false} />
             </View>
-            <ScrollView 
+            <ScrollView
                 horizontal
-                showsHorizontalScrollIndicator={false} 
+                showsHorizontalScrollIndicator={false}
             >
-                {destinations.map((el, index) => (<DiscoverCard bgImage={el.bgImage} title={el.title} location={el.location} key={index} />))}
+                {destinations.map((el, index) => (<DiscoverCard
+                    navigation={navigation}
+                    key={index}
+                    bgImage={el.bgImage}
+                    bigImage={el.bigImage}
+                    description={el.description}
+                    location={el.location}
+                    duration={el.duration}
+                    price={el.price}
+                    rating={el.rating}
+                    title={el.title}
+                />))}
             </ScrollView>
             {/* We can replace that ScrollView with this FlatList. */}
             {/* <FlatList

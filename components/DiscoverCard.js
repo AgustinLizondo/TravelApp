@@ -1,11 +1,20 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import colors from '../assets/colors';
 
 const DiscoverCard = (item) => {
     return (
-        <TouchableOpacity style={styles.mainCard}>
+        <TouchableOpacity style={styles.mainCard} onPress={() => item.navigation.navigate('Details', {
+            bgImage: item.bgImage,
+            bigImage: item.bigImage,
+            description: item.description,
+            duration: item.duration,
+            location: item.location,
+            rating: item.rating,
+            price: item.price,
+            title: item.title,
+        })}>
             <Image
                 source={item.bgImage}
                 style={styles.mainCard}
@@ -13,7 +22,7 @@ const DiscoverCard = (item) => {
             <View style={{ position: 'absolute' }}>
                 <Text style={styles.title}>{item.title}</Text>
                 <View style={styles.location}>
-                    <Icon name={'location-outline'} color={colors.White} />
+                    <Icon name={'map-marker-alt'} color={colors.White} />
                     <Text style={styles.locationText}>{item.location}</Text>
                 </View>
             </View>
@@ -28,7 +37,7 @@ const styles = StyleSheet.create({
         width: 170,
         height: 250,
         borderRadius: 20,
-        marginHorizontal: 10
+        marginHorizontal: 10,
     },
     title: {
         fontSize: 18,
@@ -41,7 +50,7 @@ const styles = StyleSheet.create({
     },
     location: {
         flexDirection: 'row',
-        marginLeft: 13.75,
+        marginLeft: 24,
         top: 174,
     },
     locationText: {
